@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLA Self-Assessment — Spanish Heritage Language Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-muted: #5c5c54;
+    --ink-faint: #9a9a8f;
+    --paper: #faf9f5;
+    --paper-warm: #f2efe6;
+    --paper-mid: #e8e4d8;
+    --accent: #c4501a;
+    --accent-light: #f5e8e0;
+    --accent-dark: #8c3610;
+    --teal: #1e6b5a;
+    --teal-light: #e0f0ea;
+    --amber: #b8860b;
+    --amber-light: #fdf5dc;
+    --green: #2d6a2d;
+    --green-light: #e8f5e8;
+    --blue: #1a4a7a;
+    --blue-light: #e4eef8;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --radius: 4px;
+    --radius-lg: 10px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── SCREENS ── */
+  .screen { display: none; min-height: 100vh; }
+  .screen.active { display: flex; flex-direction: column; }
+
+  /* ── INTRO SCREEN ── */
+  #screen-intro {
+    background: var(--ink);
+    color: var(--paper);
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #screen-intro::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,80,26,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  #screen-intro::after {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    left: -8%;
+    width: 45vw;
+    height: 45vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(30,107,90,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .intro-inner {
+    max-width: 680px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .intro-kicker {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .intro-kicker::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .intro-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    color: var(--paper);
+  }
+
+  .intro-title em {
+    font-style: italic;
+    color: #e8c4a8;
+  }
+
+  .intro-desc {
+    font-size: 15px;
+    color: rgba(250,249,245,0.7);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    max-width: 520px;
+  }
+
+  .intro-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .intro-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .intro-meta-item .num {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1;
+  }
+
+  .intro-meta-item .lbl {
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(250,249,245,0.5);
+  }
+
+  .btn-start {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: white;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    letter-spacing: .03em;
+    transition: background .2s, transform .15s;
+  }
+
+  .btn-start:hover { background: var(--accent-dark); transform: translateY(-1px); }
+  .btn-start:active { transform: translateY(0); }
+
+  .btn-start svg { width: 16px; height: 16px; }
+
+  .intro-disclaimer {
+    margin-top: 2rem;
+    font-size: 12px;
+    color: rgba(250,249,245,0.35);
+    line-height: 1.6;
+    max-width: 480px;
+  }
+
+  /* ── QUIZ SCREEN ── */
+  #screen-quiz {
+    background: var(--paper);
+    flex-direction: column;
+  }
+
+  .quiz-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .quiz-header-title {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-style: italic;
+    color: rgba(250,249,245,0.7);
+  }
+
+  .progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    max-width: 320px;
+    margin: 0 2rem;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width .4s ease;
+    width: 0%;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    color: rgba(250,249,245,0.5);
+    min-width: 48px;
+    text-align: right;
+  }
+
+  .quiz-body {
+    flex: 1;
+    padding: 3rem 1.5rem;
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .factor-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 2.5rem;
+  }
+
+  .factor-pill {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .f1 { background: var(--accent-light); color: var(--accent-dark); }
+  .f2 { background: var(--teal-light); color: var(--teal); }
+  .f3 { background: var(--amber-light); color: var(--amber); }
+
+  .factor-line {
+    flex: 1;
+    height: 1px;
+    background: var(--paper-mid);
+  }
+
+  .factor-name {
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-weight: 600;
+    margin-bottom: .4rem;
+    color: var(--ink);
+  }
+
+  .factor-sub {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-bottom: 2rem;
+  }
+
+  /* Question cards */
+  .q-card {
+    background: white;
+    border: 1px solid var(--paper-mid);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    transition: border-color .2s, box-shadow .2s;
+  }
+
+  .q-card.answered {
+    border-color: var(--paper-mid);
+    background: white;
+  }
+
+  .q-card:hover {
+    border-color: #ccc;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+
+  .q-num {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+
+  .q-text {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .scale-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+
+  .scale-options {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  .scale-opt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .scale-opt input[type="radio"] { display: none; }
+
+  .scale-btn {
+    width: 100%;
+    max-width: 52px;
+    aspect-ratio: 1;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--paper-mid);
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    cursor: pointer;
+    transition: all .15s;
+    font-family: var(--sans);
+  }
+
+  .scale-opt:hover .scale-btn {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .scale-opt input:checked ~ .scale-btn {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .quiz-footer {
+    padding: 1.5rem;
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--paper-mid);
+  }
+
+  .answered-count {
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  .answered-count strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .btn-submit {
+    background: var(--accent);
+    color: white;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background .2s, opacity .2s;
+    letter-spacing: .02em;
+  }
+
+  .btn-submit:disabled { opacity: .4; cursor: not-allowed; }
+  .btn-submit:not(:disabled):hover { background: var(--accent-dark); }
+
+  /* ── RESULTS SCREEN ── */
+  #screen-results {
+    background: var(--paper);
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .results-inner {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .results-kicker {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .results-kicker::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--ink-faint);
+    display: block;
+  }
+
+  .results-title {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--ink);
+  }
+
+  .score-display {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    background: var(--ink);
+    border-radius: var(--radius-lg);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--paper);
+  }
+
+  .score-big {
+    font-family: var(--serif);
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--paper);
+  }
+
+  .score-big span {
+    font-size: 1.4rem;
+    color: rgba(250,249,245,0.4);
+    font-weight: 400;
+  }
+
+  .score-info {}
+
+  .score-level-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(250,249,245,0.45);
+    margin-bottom: 6px;
+  }
+
+  .score-level-name {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--paper);
+    margin-bottom: .5rem;
+  }
+
+  .score-level-range {
+    font-size: 13px;
+    color: rgba(250,249,245,0.45);
+  }
+
+  /* Scale visual */
+  .scale-visual {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 2rem;
+    height: 8px;
+  }
+
+  .scale-seg {
+    flex: 1;
+    border-radius: 4px;
+    background: var(--paper-mid);
+    transition: background .3s;
+  }
+
+  .scale-seg.active-1 { background: #d94f2a; }
+  .scale-seg.active-2 { background: #d4841a; }
+  .scale-seg.active-3 { background: #c4a01a; }
+  .scale-seg.active-4 { background: #4a9a4a; }
+  .scale-seg.active-5 { background: #1e6b5a; }
+
+  /* Factor breakdown */
+  .factor-breakdown {
+    background: white;
+    border: 1px solid var(--paper-mid);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .factor-breakdown h3 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--ink);
+  }
+
+  .factor-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .factor-row:last-child { margin-bottom: 0; }
+
+  .factor-info {}
+
+  .factor-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .factor-bar-wrap {
+    height: 6px;
+    background: var(--paper-warm);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .factor-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width .6s ease;
+  }
+
+  .f1-fill { background: var(--accent); }
+  .f2-fill { background: var(--teal); }
+  .f3-fill { background: var(--amber); }
+
+  .factor-score-val {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-align: right;
+  }
+
+  .factor-score-val small {
+    font-size: .75rem;
+    color: var(--ink-faint);
+    font-weight: 400;
+  }
+
+  /* Diagnostic message */
+  .diagnostic-card {
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .diag-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: .75rem;
+  }
+
+  .diag-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .diag-text {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .diag-1 { background: #fdf0ec; }
+  .diag-1 .diag-label { color: var(--accent-dark); }
+  .diag-1 .diag-title { color: var(--accent-dark); }
+  .diag-1 .diag-text { color: #6b3020; }
+
+  .diag-2 { background: var(--amber-light); }
+  .diag-2 .diag-label { color: #7a5a00; }
+  .diag-2 .diag-title { color: #7a5a00; }
+  .diag-2 .diag-text { color: #5a4200; }
+
+  .diag-3 { background: #fefae8; }
+  .diag-3 .diag-label { color: #7a6a00; }
+  .diag-3 .diag-title { color: #7a6a00; }
+  .diag-3 .diag-text { color: #5a4e00; }
+
+  .diag-4 { background: var(--green-light); }
+  .diag-4 .diag-label { color: #1a5c1a; }
+  .diag-4 .diag-title { color: #1a5c1a; }
+  .diag-4 .diag-text { color: #1a4a1a; }
+
+  .diag-5 { background: var(--teal-light); }
+  .diag-5 .diag-label { color: var(--teal); }
+  .diag-5 .diag-title { color: var(--teal); }
+  .diag-5 .diag-text { color: #0f4a3a; }
+
+  .btn-restart {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--ink-muted);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 400;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--paper-mid);
+    transition: color .2s;
+  }
+
+  .btn-restart:hover { color: var(--ink); }
+
+  .citation {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--paper-mid);
+    font-size: 11px;
+    color: var(--ink-faint);
+    line-height: 1.7;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    .score-display { grid-template-columns: 1fr; gap: 1rem; }
+    .scale-btn { max-width: 40px; font-size: 13px; }
+    .quiz-header { padding: .75rem 1rem; }
+    .quiz-body { padding: 2rem 1rem; }
+    .progress-wrap { max-width: 160px; margin: 0 .75rem; }
+    .intro-meta { gap: 1.5rem; }
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .intro-inner > * {
+    animation: fadeUp .5s ease both;
+  }
+
+  .intro-inner > *:nth-child(1) { animation-delay: .05s; }
+  .intro-inner > *:nth-child(2) { animation-delay: .12s; }
+  .intro-inner > *:nth-child(3) { animation-delay: .2s; }
+  .intro-inner > *:nth-child(4) { animation-delay: .28s; }
+  .intro-inner > *:nth-child(5) { animation-delay: .36s; }
+  .intro-inner > *:nth-child(6) { animation-delay: .44s; }
+
+  .results-inner > * {
+    animation: fadeUp .4s ease both;
+  }
+
+  .results-inner > *:nth-child(1) { animation-delay: .05s; }
+  .results-inner > *:nth-child(2) { animation-delay: .1s; }
+  .results-inner > *:nth-child(3) { animation-delay: .18s; }
+  .results-inner > *:nth-child(4) { animation-delay: .26s; }
+  .results-inner > *:nth-child(5) { animation-delay: .34s; }
+  .results-inner > *:nth-child(6) { animation-delay: .42s; }
+  .results-inner > *:nth-child(7) { animation-delay: .5s; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ INTRO ══════════════ -->
+<section id="screen-intro" class="screen active">
+  <div class="intro-inner">
+    <div class="intro-kicker">CLA Self-Assessment · Heritage Language Workshop</div>
+    <h1 class="intro-title">
+      How aware are you of<br><em>language in society?</em>
+    </h1>
+    <p class="intro-desc">
+      This questionnaire measures your Critical Language Awareness (CLA) — 
+      your understanding of how social, political, and cultural forces shape 
+      attitudes toward Spanish in the United States.
+    </p>
+    <div class="intro-meta">
+      <div class="intro-meta-item">
+        <span class="num">19</span>
+        <span class="lbl">Statements</span>
+      </div>
+      <div class="intro-meta-item">
+        <span class="num">~8</span>
+        <span class="lbl">Minutes</span>
+      </div>
+      <div class="intro-meta-item">
+        <span class="num">3</span>
+        <span class="lbl">Dimensions</span>
+      </div>
+    </div>
+    <button class="btn-start" onclick="startQuiz()">
+      Begin assessment
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </button>
+    <p class="intro-disclaimer">
+      There are no right or wrong answers. Your responses reflect your current perspective 
+      and serve as a starting point for reflection. No data is stored or shared — 
+      this tool runs entirely in your browser.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════ QUIZ ══════════════ -->
+<section id="screen-quiz" class="screen">
+  <header class="quiz-header">
+    <span class="quiz-header-title">CLA Self-Assessment</span>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <span class="progress-label" id="progress-label">0 / 19</span>
+    </div>
+  </header>
+
+  <main class="quiz-body" id="quiz-body">
+    <!-- injected by JS -->
+  </main>
+
+  <footer class="quiz-footer">
+    <span class="answered-count" id="answered-count">
+      <strong>0</strong> of 19 answered
+    </span>
+    <button class="btn-submit" id="btn-submit" disabled onclick="submitQuiz()">
+      See my results →
+    </button>
+  </footer>
+</section>
+
+<!-- ══════════════ RESULTS ══════════════ -->
+<section id="screen-results" class="screen">
+  <div class="results-inner" id="results-inner">
+    <!-- injected by JS -->
+  </div>
+</section>
+
+<script>
+const QUESTIONS = [
+  // Factor 1 — Language variation, prejudice & English hegemony (items 1–9, all REVERSED)
+  { id:1,  factor:1, text:"People from Spain speak the purest form of Spanish.", reversed:true },
+  { id:2,  factor:1, text:"In my opinion, people should use standard Spanish to communicate all the time.", reversed:true },
+  { id:3,  factor:1, text:"I believe Spanish-speaking Hispanics in the U.S. don't speak correct Spanish.", reversed:true },
+  { id:4,  factor:1, text:"I feel speaking Spanish is less prestigious than speaking other foreign languages such as French.", reversed:true },
+  { id:5,  factor:1, text:"In my opinion, speaking English is an essential element of being American.", reversed:true },
+  { id:6,  factor:1, text:"In my opinion, it's more important for immigrants to learn English and adopt the American culture than to keep their own language and culture.", reversed:true },
+  { id:7,  factor:1, text:"In my opinion, families can speak Spanish among themselves at home but when in public they should speak English to each other.", reversed:true },
+  { id:8,  factor:1, text:"I believe growing up with both Spanish and English confuses children.", reversed:true },
+  { id:9,  factor:1, text:"If I were to give a professional presentation, I would try to avoid working with a partner who has a strong foreign accent in English.", reversed:true },
+  // Factor 2 — Bilingualism, Spanglish & code-switching (items 10–16, all REVERSED)
+  { id:10, factor:2, text:"I believe people who speak Spanglish should switch to just Spanish or English.", reversed:true },
+  { id:11, factor:2, text:"I don't like it when people say 'parquear' instead of 'estacionar'.", reversed:true },
+  { id:12, factor:2, text:"I don't like it when people code-switch because it is not a proper way of speaking a language.", reversed:true },
+  { id:13, factor:2, text:"I believe Spanglish should not be allowed in Spanish classes.", reversed:true },
+  { id:14, factor:2, text:"I would tease a friend when speaking Spanish if they forget or invent words.", reversed:true },
+  { id:15, factor:2, text:"I would try to avoid mixing Spanish and English in the same conversation as much as I can.", reversed:true },
+  { id:16, factor:2, text:"I would not code-switch in front of my teachers because they may think I am less intelligent.", reversed:true },
+  // Factor 3 — Language maintenance & advocacy (items 17–19, NOT reversed)
+  { id:17, factor:3, text:"I would be willing to join a club that meets every week to discuss how to maintain Spanish within the family and community.", reversed:false },
+  { id:18, factor:3, text:"After college, I would commit to reading, writing, speaking, and listening in Spanish every day to continue developing my language.", reversed:false },
+  { id:19, factor:3, text:"I would speak to Hispanic students at my university about the benefits of keeping Spanish alive in the United States.", reversed:false },
+];
+
+const FACTORS = {
+  1: { name:"Language variation, prejudice & English hegemony", cls:"f1", fillCls:"f1-fill" },
+  2: { name:"Bilingualism, Spanglish & code-switching", cls:"f2", fillCls:"f2-fill" },
+  3: { name:"Language maintenance & advocacy", cls:"f3", fillCls:"f3-fill" },
+};
+
+const LEVELS = [
+  { min:1.0,  max:2.49, level:1, name:"Nascent Awareness",
+    label:"Level 1 — Nascent Awareness",
+    cls:"diag-1",
+    message:`Thank you for completing this questionnaire! Your responses suggest that you are at the beginning of your journey in critically exploring language in society. Like many people, some of the ideas you currently hold reflect deeply ingrained beliefs about what counts as "correct" or "proper" language — beliefs that are widely shared but rarely questioned. This workshop is a great opportunity to begin exploring the social and political forces that shape those ideas. There are no wrong answers here, only starting points for reflection and growth.` },
+  { min:2.5,  max:3.49, level:2, name:"Emerging Awareness",
+    label:"Level 2 — Emerging Awareness",
+    cls:"diag-2",
+    message:`Thank you for completing this questionnaire! Your responses show that you are already beginning to question some dominant ideas about language — you likely recognize the value of bilingualism and can see that language use is tied to social context. At the same time, there may be some areas, such as attitudes toward code-switching or non-standard varieties, where dominant ideologies are still influential. This workshop will help you build on your growing awareness and develop a richer critical toolkit for thinking about Spanish in the United States.` },
+  { min:3.5,  max:4.49, level:3, name:"Developing Awareness",
+    label:"Level 3 — Developing Awareness",
+    cls:"diag-3",
+    message:`Thank you for completing this questionnaire! Your responses indicate a developing critical language awareness. You clearly understand that language variation is natural, and that attitudes toward Spanish — including Spanglish and code-switching — are shaped by social and political forces rather than linguistic facts. You are well-positioned to deepen this awareness further and begin thinking about how to apply it in educational and community contexts. This workshop will help you refine and extend your critical perspective.` },
+  { min:4.5,  max:5.19, level:4, name:"Consolidated Awareness",
+    label:"Level 4 — Consolidated Awareness",
+    cls:"diag-4",
+    message:`Thank you for completing this questionnaire! Your responses reflect a strong and consistent critical language awareness. You approach language with an informed, equitable lens — recognizing the legitimacy of all varieties of Spanish, understanding how English hegemony shapes language ideologies, and valuing bilingual practices like code-switching. This workshop can be an opportunity to connect your awareness to concrete teaching strategies and explore ways to advocate for heritage language learners in your classroom and community.` },
+  { min:5.2,  max:6.0,  level:5, name:"Advanced Awareness",
+    label:"Level 5 — Advanced Awareness",
+    cls:"diag-5",
+    message:`Thank you for completing this questionnaire! Your responses demonstrate an advanced and highly developed critical language awareness. You consistently challenge dominant language ideologies, affirm the intrinsic value of U.S. Spanish and bilingual varieties, and show a strong commitment to heritage language maintenance and community advocacy. Your perspective is a valuable resource in any educational setting. This workshop may offer an opportunity to share your insights, explore new strategies, and connect with others who share your commitment to linguistic equity.` },
+];
+
+const answers = {};
+
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function startQuiz() {
+  buildQuiz();
+  show('screen-quiz');
+}
+
+function buildQuiz() {
+  const body = document.getElementById('quiz-body');
+  let html = '';
+  let lastFactor = null;
+
+  QUESTIONS.forEach((q) => {
+    if (q.factor !== lastFactor) {
+      const f = FACTORS[q.factor];
+      const factorDesc = q.factor === 1
+        ? 'Rate how much you agree with each statement (1 = strongly disagree, 6 = strongly agree).'
+        : q.factor === 2
+        ? 'Rate how much you agree or how likely you are to do each of the following.'
+        : 'Rate how likely you are to take these actions.';
+      html += `
+        <div class="factor-divider">
+          <span class="factor-pill ${f.cls}">Factor ${q.factor}</span>
+          <div class="factor-line"></div>
+        </div>
+        <h2 class="factor-name">${f.name}</h2>
+        <p class="factor-sub">${factorDesc}</p>`;
+      lastFactor = q.factor;
+    }
+
+    const labelLeft  = q.reversed || q.factor < 3 ? 'Strongly disagree' : 'Very unlikely';
+    const labelRight = q.reversed || q.factor < 3 ? 'Strongly agree'    : 'Very likely';
+
+    html += `
+      <div class="q-card" id="qcard-${q.id}">
+        <p class="q-num">Statement ${q.id} of 19</p>
+        <p class="q-text">${q.text}</p>
+        <div class="scale-wrap">
+          <div class="scale-labels">
+            <span>${labelLeft}</span>
+            <span>${labelRight}</span>
+          </div>
+          <div class="scale-options">`;
+
+    for (let v = 1; v <= 6; v++) {
+      html += `
+            <label class="scale-opt">
+              <input type="radio" name="q${q.id}" value="${v}" onchange="recordAnswer(${q.id}, ${v})">
+              <span class="scale-btn">${v}</span>
+            </label>`;
+    }
+
+    html += `
+          </div>
+        </div>
+      </div>`;
+  });
+
+  body.innerHTML = html;
+  updateFooter();
+}
+
+function recordAnswer(qid, val) {
+  answers[qid] = val;
+  const card = document.getElementById(`qcard-${qid}`);
+  if (card) card.classList.add('answered');
+  updateFooter();
+}
+
+function updateFooter() {
+  const count = Object.keys(answers).length;
+  document.getElementById('answered-count').innerHTML = `<strong>${count}</strong> of 19 answered`;
+  document.getElementById('progress-fill').style.width = `${(count/19)*100}%`;
+  document.getElementById('progress-label').textContent = `${count} / 19`;
+  document.getElementById('btn-submit').disabled = count < 19;
+}
+
+function computeScores() {
+  const adjusted = {};
+  QUESTIONS.forEach(q => {
+    const raw = answers[q.id];
+    adjusted[q.id] = q.reversed ? (7 - raw) : raw;
+  });
+
+  const f1items = QUESTIONS.filter(q=>q.factor===1).map(q=>adjusted[q.id]);
+  const f2items = QUESTIONS.filter(q=>q.factor===2).map(q=>adjusted[q.id]);
+  const f3items = QUESTIONS.filter(q=>q.factor===3).map(q=>adjusted[q.id]);
+
+  const avg = arr => arr.reduce((a,b)=>a+b,0)/arr.length;
+  const f1 = avg(f1items);
+  const f2 = avg(f2items);
+  const f3 = avg(f3items);
+  const overall = avg([...f1items,...f2items,...f3items]);
+
+  return { f1, f2, f3, overall };
+}
+
+function getLevel(score) {
+  for (const l of LEVELS) {
+    if (score >= l.min && score <= l.max) return l;
+  }
+  return score < 1.0 ? LEVELS[0] : LEVELS[4];
+}
+
+function fmt(n) { return n.toFixed(2); }
+
+function submitQuiz() {
+  const scores = computeScores();
+  const level = getLevel(scores.overall);
+  buildResults(scores, level);
+  show('screen-results');
+}
+
+function buildResults(scores, level) {
+  const segs = [1,2,3,4,5].map(n =>
+    `<div class="scale-seg ${n <= level.level ? `active-${level.level}` : ''}"></div>`
+  ).join('');
+
+  const pct1 = ((scores.f1 - 1) / 5 * 100).toFixed(0);
+  const pct2 = ((scores.f2 - 1) / 5 * 100).toFixed(0);
+  const pct3 = ((scores.f3 - 1) / 5 * 100).toFixed(0);
+
+  document.getElementById('results-inner').innerHTML = `
+    <p class="results-kicker">Your CLA Profile</p>
+    <h2 class="results-title">Here is where you stand<br>on critical language awareness.</h2>
+
+    <div class="score-display">
+      <div>
+        <div class="score-big">${fmt(scores.overall)}<span> /6</span></div>
+      </div>
+      <div class="score-info">
+        <p class="score-level-label">Your CLA level</p>
+        <p class="score-level-name">${level.name}</p>
+        <p class="score-level-range">Score range: ${level.min.toFixed(1)} – ${level.max.toFixed(2)}</p>
+      </div>
+    </div>
+
+    <div class="scale-visual">${segs}</div>
+
+    <div class="factor-breakdown">
+      <h3>Score breakdown by dimension</h3>
+      <div class="factor-row">
+        <div class="factor-info">
+          <p class="factor-label">Language variation, prejudice & English hegemony</p>
+          <div class="factor-bar-wrap">
+            <div class="factor-bar-fill f1-fill" style="width:${pct1}%"></div>
+          </div>
+        </div>
+        <div class="factor-score-val">${fmt(scores.f1)}<small>/6</small></div>
+      </div>
+      <div class="factor-row">
+        <div class="factor-info">
+          <p class="factor-label">Bilingualism, Spanglish & code-switching</p>
+          <div class="factor-bar-wrap">
+            <div class="factor-bar-fill f2-fill" style="width:${pct2}%"></div>
+          </div>
+        </div>
+        <div class="factor-score-val">${fmt(scores.f2)}<small>/6</small></div>
+      </div>
+      <div class="factor-row">
+        <div class="factor-info">
+          <p class="factor-label">Language maintenance & advocacy</p>
+          <div class="factor-bar-wrap">
+            <div class="factor-bar-fill f3-fill" style="width:${pct3}%"></div>
+          </div>
+        </div>
+        <div class="factor-score-val">${fmt(scores.f3)}<small>/6</small></div>
+      </div>
+    </div>
+
+    <div class="diagnostic-card ${level.cls}">
+      <p class="diag-label">${level.label}</p>
+      <p class="diag-title">${level.name}</p>
+      <p class="diag-text">${level.message}</p>
+    </div>
+
+    <button class="btn-restart" onclick="restart()">← Retake the questionnaire</button>
+
+    <div class="citation">
+      <strong>Interactive tool:</strong> Acero Ayuda, A. (2026). <em>CLA Self-Assessment Tool</em> [Interactive questionnaire]. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color:inherit">CC BY 4.0</a>.<br><br>
+      <strong>Measurement instrument:</strong> Beaudrie, S., Amezcua, A., &amp; Loza, S. (2019). Critical language awareness for the heritage context: Development and validation of a measurement questionnaire. <em>Language Testing</em>. <a href="https://doi.org/10.1177/0265532219844293" target="_blank" style="color:inherit">https://doi.org/10.1177/0265532219844293</a><br><br>
+      Any use or adaptation of this tool must credit both parties above. This tool runs entirely in your browser — no responses are stored or transmitted.
+    </div>
+  `;
+}
+
+function restart() {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  buildQuiz();
+  show('screen-quiz');
+}
+</script>
+</body>
+</html>
