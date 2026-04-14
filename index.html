@@ -720,7 +720,7 @@ function submitQuiz(){
 async function sendToSheet(scores,level,profile){
   const el=document.getElementById('save-status');
   if(!el) return;
-  if(SHEET_URL==='YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'){
+  if(SHEET_URL==='https://script.google.com/macros/s/AKfycby2Thr2D0hnv1N1wxZS8eUHgOAAxHTebcQkaVlnf3cwFz5BZxhooVbvhudz3m3ULQ5FZA/exec'){
     el.className='save-status error';
     el.innerHTML=`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/><path d="M8 5v3M8 11v.5"/></svg>
       <span>Google Sheet not yet connected. See README for setup. Your score is still valid.</span>`;
