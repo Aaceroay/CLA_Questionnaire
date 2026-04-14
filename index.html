@@ -1,5 +1,5 @@
 <script>
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwCzYFhjWjB_f6eAzfJNX8seos7CqFWYQM42zDHmMulGIdkX_tUTQdgqTKJSsgwBVZItw/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwjPIY5N4NFyJups6YO5mb7mcCVHN6_ruTdynwbZ6HLBlwMJgRiDNAEofeZx78FfiRiTw/exec';
 
 /* ================= QUESTIONS ================= */
 const QUESTIONS = [
@@ -156,12 +156,12 @@ async function sendToSheet(scores, level, profile){
   };
 
   try {
-    await fetch(SHEET_URL, {
-      method: 'POST',
-      body: new URLSearchParams({
-        data: JSON.stringify(payload)
-      })
-    });
+await fetch(SHEET_URL, {
+  method: "POST",
+  body: new URLSearchParams({
+    data: JSON.stringify(payload)
+  })
+});
 
     el.className = 'save-status saved';
     el.innerHTML = 'Responses saved successfully to Google Sheets.';
