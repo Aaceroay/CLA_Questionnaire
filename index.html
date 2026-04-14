@@ -738,7 +738,12 @@ async function sendToSheet(scores,level,profile){
     ...Object.fromEntries(QUESTIONS.map(q=>[`q${q.id}_adj`,scores.adj[q.id]])),
   };
   try{
-    await fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    await fetch(SHEET_URL, {
+  method: 'POST',
+  body: new URLSearchParams({
+    data: JSON.stringify(payload)
+  })
+});
     el.className='save-status saved';
     el.innerHTML=`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8l4 4 8-8"/></svg> <span>Responses saved to the workshop record successfully.</span>`;
   }catch(e){
