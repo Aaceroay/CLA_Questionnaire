@@ -1,9 +1,13 @@
+last button on survey, doesnt show answers. What is wrong?
+
+Here the coding for git hub
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CLA Self-Assessment — Spanish Heritage Language Workshop</title>
+<title>CLA Self-Assessment — Spanish Heritage Language</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -23,7 +27,7 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height:100vh;font-size:16px;line-height:1.6}
 .screen{display:none;min-height:100vh;flex-direction:column}
 .screen.active{display:flex}
- 
+
 /* INTRO */
 #screen-intro{background:var(--ink);color:var(--paper);align-items:center;justify-content:center;padding:3rem 1.5rem;position:relative;overflow:hidden}
 #screen-intro::before{content:'';position:absolute;top:-20%;right:-10%;width:60vw;height:60vw;border-radius:50%;background:radial-gradient(circle,rgba(196,80,26,.12) 0%,transparent 70%);pointer-events:none}
@@ -46,7 +50,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 .intro-credit{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:rgba(250,249,245,.35);line-height:1.7;max-width:520px}
 .intro-credit strong{color:rgba(250,249,245,.55);font-weight:500}
 .intro-credit a{color:rgba(250,249,245,.5)}
- 
+
 /* PROFILE */
 #screen-profile{background:var(--paper)}
 .top-bar{background:var(--ink);color:var(--paper);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
@@ -89,7 +93,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 .btn-next{background:var(--accent);color:white;font-family:var(--sans);font-size:14px;font-weight:500;padding:12px 24px;border:none;border-radius:var(--radius);cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:8px}
 .btn-next:hover{background:var(--accent-dark)}
 .btn-next svg{width:16px;height:16px}
- 
+
 /* QUIZ */
 #screen-quiz{background:var(--paper)}
 .quiz-header{background:var(--ink);color:var(--paper);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
@@ -125,7 +129,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 .btn-submit{background:var(--accent);color:white;font-family:var(--sans);font-size:14px;font-weight:500;padding:12px 24px;border:none;border-radius:var(--radius);cursor:pointer;transition:background .2s,opacity .2s;letter-spacing:.02em}
 .btn-submit:disabled{opacity:.4;cursor:not-allowed}
 .btn-submit:not(:disabled):hover{background:var(--accent-dark)}
- 
+
 /* RESULTS */
 #screen-results{background:var(--paper);align-items:center;padding:3rem 1.5rem 4rem}
 .results-inner{max-width:700px;width:100%;margin:0 auto}
@@ -169,14 +173,14 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 .btn-restart:hover{color:var(--ink)}
 .citation{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--paper-mid);font-size:11px;color:var(--ink-faint);line-height:1.7}
 .citation a{color:inherit}
- 
+
 /* COPYRIGHT BAR */
 .copyright-bar{width:100%;background:var(--ink);border-top:1px solid rgba(255,255,255,.08);padding:12px 2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px}
 .copyright-bar p{font-size:11px;color:rgba(250,249,245,.38);line-height:1.6}
 .copyright-bar a{color:rgba(250,249,245,.55);text-decoration:underline;text-underline-offset:2px}
 .copyright-bar a:hover{color:rgba(250,249,245,.85)}
 .copyright-bar .pipe{color:rgba(255,255,255,.2);margin:0 6px}
- 
+
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .intro-inner>*{animation:fadeUp .5s ease both}
@@ -189,7 +193,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 .results-inner>*:nth-child(3){animation-delay:.18s}.results-inner>*:nth-child(4){animation-delay:.26s}
 .results-inner>*:nth-child(5){animation-delay:.34s}.results-inner>*:nth-child(6){animation-delay:.42s}
 .results-inner>*:nth-child(7){animation-delay:.5s}
- 
+
 @media(max-width:600px){
   .score-display{grid-template-columns:1fr;gap:1rem}
   .scale-btn{max-width:40px;font-size:13px}
@@ -201,11 +205,11 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 </style>
 </head>
 <body>
- 
+
 <!-- ══════════════ INTRO ══════════════ -->
 <section id="screen-intro" class="screen active">
   <div class="intro-inner">
-    <div class="intro-kicker">CLA Self-Assessment · Heritage Language Workshop</div>
+    <div class="intro-kicker">CLA Self-Assessment · Spanish Heritage Language</div>
     <h1 class="intro-title">How aware are you of<br><em>language in society?</em></h1>
     <p class="intro-desc">This questionnaire measures your Critical Language Awareness (CLA) — your understanding of how social, political, and cultural forces shape attitudes toward Spanish in the United States.</p>
     <div class="intro-meta">
@@ -217,14 +221,14 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
       Begin assessment
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
     </button>
-    <p class="intro-disclaimer">There are no right or wrong answers. Your responses reflect your current perspective. Your profile data is accessible only to the workshop facilitator.</p>
+    <p class="intro-disclaimer">There are no right or wrong answers. Your responses reflect your current perspective. Your profile data will be private.</p>
     <div class="intro-credit">
       <strong>Interactive tool:</strong> &copy; 2026 Alejandro Acero Ayuda &middot; <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a><br>
       <strong>Instrument:</strong> Beaudrie, S., Amezcua, A., &amp; Loza, S. (2019). <em>Language Testing</em>. <a href="https://doi.org/10.1177/0265532219844293" target="_blank">doi:10.1177/0265532219844293</a>
     </div>
   </div>
 </section>
- 
+
 <!-- ══════════════ PROFILE ══════════════ -->
 <section id="screen-profile" class="screen">
   <header class="top-bar">
@@ -233,17 +237,17 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
   </header>
   <main class="profile-body">
     <div id="session-badge-wrap"></div>
- 
+
     <!-- SECTION 1: PERSONAL -->
     <h2 class="sec-heading">About you</h2>
-    <p class="sec-sub">This information helps the researcher understand who participated. All data is confidential and only accessible to the workshop facilitator.</p>
- 
+    <p class="sec-sub">This information helps the researcher understand who participated. All data is confidential and only accessible to the researcher</p>
+
     <div class="form-grid">
       <div class="field"><label for="p-firstname">First name</label><input type="text" id="p-firstname" placeholder="e.g. Maria"></div>
       <div class="field"><label for="p-lastinitial">Last name initial</label><input type="text" id="p-lastinitial" maxlength="2" placeholder="e.g. G"></div>
       <div class="field"><label for="p-email">Email <span style="font-weight:400;text-transform:none">(optional)</span></label><input type="email" id="p-email" placeholder="e.g. maria@example.com"><span class="hint">Only used to match pre/post records if needed</span></div>
     </div>
- 
+
     <div class="form-grid">
       <div class="field">
         <span class="flabel">Gender</span>
@@ -255,14 +259,14 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
         </div>
       </div>
     </div>
- 
+
     <div class="form-grid">
       <div class="field"><label for="p-birthyear">Year of birth</label><input type="number" id="p-birthyear" min="1930" max="2010" placeholder="e.g. 1985"></div>
       <div class="field"><label for="p-birthcountry">Country of birth</label><input type="text" id="p-birthcountry" placeholder="e.g. Mexico"></div>
     </div>
- 
+
     <div class="divider"></div>
- 
+
     <!-- SECTION 2: GEOGRAPHY -->
     <h2 class="sec-heading">Where you live &amp; work</h2>
     <p class="sec-sub">This helps situate your linguistic context geographically.</p>
@@ -274,12 +278,12 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
       <div class="field"><label for="p-work-region">Region / State / Province where you work</label><input type="text" id="p-work-region" placeholder="e.g. California"></div>
       <div class="field"><label for="p-work-country">Country where you work</label><input type="text" id="p-work-country" placeholder="e.g. United States"></div>
     </div>
- 
+
     <div class="divider"></div>
- 
+
     <!-- SECTION 3: EDUCATION & WORK -->
     <h2 class="sec-heading">Education &amp; occupation</h2>
- 
+
     <div class="form-grid">
       <div class="field">
         <span class="flabel">Highest level of education completed</span>
@@ -299,7 +303,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
         <span class="hint">Most relevant or most recent degree</span>
       </div>
     </div>
- 
+
     <div class="form-grid">
       <div class="field">
         <span class="flabel">Sector of work</span>
@@ -320,7 +324,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
       <div class="field">
         <label for="p-job-title">Job title or role <span style="font-weight:400;text-transform:none">(optional)</span></label>
         <input type="text" id="p-job-title" placeholder="e.g. High school Spanish teacher" style="margin-bottom:1.5rem">
- 
+
         <span class="flabel">Prior experience with Spanish heritage language instruction?</span>
         <div class="radio-col" style="margin-top:6px">
           <label class="ropt"><input type="radio" name="shl-exp" value="None"><span>None</span></label>
@@ -331,14 +335,14 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
         </div>
       </div>
     </div>
- 
+
     <div class="divider"></div>
- 
+
     <!-- SECTION 4: LANGUAGES -->
     <h2 class="sec-heading">Languages</h2>
     <p class="sec-sub">List all languages you use regularly. Rate your self-perceived proficiency in each skill.<br>
     <strong>H</strong> = Highly proficient &nbsp;&middot;&nbsp; <strong>MH</strong> = Medium-high &nbsp;&middot;&nbsp; <strong>ML</strong> = Medium-low &nbsp;&middot;&nbsp; <strong>L</strong> = Low</p>
- 
+
     <table class="lang-table" id="lang-table">
       <thead>
         <tr>
@@ -353,13 +357,13 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
       <tbody id="lang-tbody"></tbody>
     </table>
     <button class="add-lang-btn" onclick="addLangRow()">+ Add another language</button>
- 
+
     <div class="divider"></div>
- 
+
     <!-- SECTION 5: LANGUAGE BACKGROUND -->
     <h2 class="sec-heading">Language background &amp; identity</h2>
     <p class="sec-sub">These questions contextualise your relationship with Spanish.</p>
- 
+
     <div class="form-grid">
       <div class="field">
         <span class="flabel">Do you identify as a heritage speaker of Spanish?</span>
@@ -382,7 +386,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
         </div>
       </div>
     </div>
- 
+
     <div class="form-grid">
       <div class="field">
         <span class="flabel">Main contexts where you currently use Spanish <span style="font-weight:400;text-transform:none">(select all that apply)</span></span>
@@ -407,10 +411,10 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
         </div>
       </div>
     </div>
- 
+
     <div class="form-grid">
       <div class="field">
-        <span class="flabel">Attitude toward Spanish before today's workshop</span>
+        <span class="flabel">What is your attitude towards the Spanish language at this point in your life?</span>
         <div class="radio-col" style="margin-top:6px">
           <label class="ropt"><input type="radio" name="prior-attitude" value="Very positive"><span>Very positive</span></label>
           <label class="ropt"><input type="radio" name="prior-attitude" value="Somewhat positive"><span>Somewhat positive</span></label>
@@ -420,7 +424,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
         </div>
       </div>
       <div class="field">
-        <span class="flabel">Have you previously attended a workshop or course on language awareness or sociolinguistics?</span>
+        <span class="flabel">Have you previously attended a workshop or course on critical language awareness or sociolinguistics?</span>
         <div class="radio-col" style="margin-top:6px">
           <label class="ropt"><input type="radio" name="prior-workshop" value="Yes, formal course"><span>Yes, as part of a formal course</span></label>
           <label class="ropt"><input type="radio" name="prior-workshop" value="Yes, informal workshop"><span>Yes, in an informal workshop</span></label>
@@ -429,18 +433,14 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
         </div>
       </div>
     </div>
- 
+
     <div class="form-grid">
-      <div class="field">
-        <label for="p-motivation">What motivated you to attend this workshop? <span style="font-weight:400;text-transform:none">(optional)</span></label>
-        <textarea id="p-motivation" placeholder="Briefly share what brought you here and what you hope to gain..."></textarea>
-      </div>
       <div class="field">
         <label for="p-comments">Any other information you would like to share? <span style="font-weight:400;text-transform:none">(optional)</span></label>
         <textarea id="p-comments" placeholder="Any relevant background, context, or comments..."></textarea>
       </div>
     </div>
- 
+
   </main>
   <footer class="profile-footer">
     <p>All profile fields are optional. Completing them helps the research.</p>
@@ -450,7 +450,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
     </button>
   </footer>
 </section>
- 
+
 <!-- ══════════════ QUIZ ══════════════ -->
 <section id="screen-quiz" class="screen">
   <header class="quiz-header">
@@ -463,29 +463,43 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
   <main class="quiz-body" id="quiz-body"></main>
   <footer class="quiz-footer">
     <span class="answered-count" id="answered-count"><strong>0</strong> of 19 answered</span>
+    <div style="margin-top: 12px; font-size: 12px; color: var(--ink-muted); line-height: 1.5; max-width: 420px;">
+  <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+    <input type="checkbox" id="consent-check" style="margin-top: 3px;">
+    <span>
+      I understand that my data remains private, and will be anonymized in case any of these responses are used for research purposes.
+    </span>
+  </label>
+
+  <p style="margin-top: 6px; margin-left: 22px;">
+    Your responses may include limited identifying information (e.g., name or email) 
+    for matching pre- and post-surveys. This information will be removed during data processing, 
+    and all analyses will be conducted on anonymized data.
+  </p>
+</div>
     <button class="btn-submit" id="btn-submit" disabled onclick="submitQuiz()">See my results →</button>
   </footer>
 </section>
- 
+
 <!-- ══════════════ RESULTS ══════════════ -->
 <section id="screen-results" class="screen">
   <div class="results-inner" id="results-inner"></div>
 </section>
- 
+
 <!-- ══════════════ COPYRIGHT BAR ══════════════ -->
 <footer class="copyright-bar">
   <p>&copy; 2026 Alejandro Acero Ayuda &middot; <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a><span class="pipe">|</span>Instrument: Beaudrie, Amezcua &amp; Loza (2019). <em>Language Testing</em>. <a href="https://doi.org/10.1177/0265532219844293" target="_blank">doi:10.1177/0265532219844293</a></p>
-  <p>Participant data is sent only to the workshop facilitator's private spreadsheet.</p>
+  <p>Participant data is sent only to the researcher's private spreadsheet.</p>
 </footer>
- 
+
 <script>
 /* ═══════════════════════════════════
    CONFIGURATION
    Replace with your Google Apps Script
    web app URL after setup (see README).
 ═══════════════════════════════════ */
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwjPIY5N4NFyJups6YO5mb7mcCVHN6_ruTdynwbZ6HLBlwMJgRiDNAEofeZx78FfiRiTw/exec';
- 
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyPOBXa3r1BT4c1ZcOkpkYdNgk0TDk6oQv0pf88vGW_LVhVbtbcloi9mdRKhphvZBxiJQ/exec';
+
 /* ═══════════════════════════════════
    QUESTIONS (updated for general audiences)
 ═══════════════════════════════════ */
@@ -510,37 +524,37 @@ const QUESTIONS = [
   {id:18, factor:3, text:"After finishing taking Spanish language lessons, I would commit to reading, writing, speaking, and listening in Spanish every day to continue developing my language.", reversed:false},
   {id:19, factor:3, text:"I would speak to Hispanic people in my environment (colleagues, family, friends, etc.) about the benefits of keeping Spanish alive in the United States.", reversed:false},
 ];
- 
+
 const FACTORS = {
   1:{name:"Language variation, prejudice & English hegemony", cls:"f1", fillCls:"f1-fill"},
   2:{name:"Bilingualism, Spanglish & code-switching",         cls:"f2", fillCls:"f2-fill"},
   3:{name:"Language maintenance & advocacy",                  cls:"f3", fillCls:"f3-fill"},
 };
- 
+
 const LEVELS = [
   {min:1.0,max:2.49,level:1,name:"Nascent Awareness",cls:"diag-1",label:"Level 1 — Nascent Awareness",
-   message:"Thank you for completing this questionnaire! Your responses suggest that you are at the beginning of your journey in critically exploring language in society. Like many people, some of the ideas you currently hold reflect deeply ingrained beliefs about what counts as \"correct\" or \"proper\" language — beliefs that are widely shared but rarely questioned. This workshop is a great opportunity to begin exploring the social and political forces that shape those ideas. There are no wrong answers here, only starting points for reflection and growth."},
+   message:"Thank you for completing this questionnaire! Your responses suggest that you are at the beginning of your journey in critically exploring language in society. Like many people, some of the ideas you currently hold reflect deeply ingrained beliefs about what counts as \"correct\" or \"proper\" language — beliefs that are widely shared but rarely questioned. Attending a Critical Language Awareness (CLA) workshop is a great opportunity to begin exploring the social and political forces that shape those ideas. There are no wrong answers here, only starting points for reflection and growth."},
   {min:2.5,max:3.49,level:2,name:"Emerging Awareness",cls:"diag-2",label:"Level 2 — Emerging Awareness",
-   message:"Thank you for completing this questionnaire! Your responses show that you are already beginning to question some dominant ideas about language — you likely recognise the value of bilingualism and can see that language use is tied to social context. At the same time, there may be areas, such as attitudes toward code-switching or non-standard varieties, where dominant ideologies remain influential. This workshop will help you build on your growing awareness and develop a richer critical toolkit."},
+   message:"Thank you for completing this questionnaire! Your responses show that you are already beginning to question some dominant ideas about language — you likely recognise the value of bilingualism and can see that language use is tied to social context. At the same time, there may be areas, such as attitudes toward code-switching or non-standard varieties, where dominant ideologies remain influential. Attending a Critical Language Awareness (CLA) workshop will help you build on your growing awareness and develop a richer critical toolkit."},
   {min:3.5,max:4.49,level:3,name:"Developing Awareness",cls:"diag-3",label:"Level 3 — Developing Awareness",
-   message:"Thank you for completing this questionnaire! Your responses indicate a developing critical language awareness. You clearly understand that language variation is natural and that attitudes toward Spanish — including Spanglish and code-switching — are shaped by social and political forces rather than linguistic facts. You are well-positioned to deepen this awareness and apply it in your professional and community contexts. This workshop will help you refine and extend your critical perspective."},
+   message:"Thank you for completing this questionnaire! Your responses indicate a developing critical language awareness. You clearly understand that language variation is natural and that attitudes toward Spanish — including Spanglish and code-switching — are shaped by social and political forces rather than linguistic facts. You are well-positioned to deepen this awareness and apply it in your professional and community contexts. Attending a Critical Language Awareness (CLA) workshop will help you refine and extend your critical perspective."},
   {min:4.5,max:5.19,level:4,name:"Consolidated Awareness",cls:"diag-4",label:"Level 4 — Consolidated Awareness",
-   message:"Thank you for completing this questionnaire! Your responses reflect a strong and consistent critical language awareness. You approach language with an informed, equitable lens — recognising the legitimacy of all varieties of Spanish, understanding how English hegemony shapes language ideologies, and valuing bilingual practices like code-switching. This workshop can be an opportunity to connect your awareness to concrete strategies and explore how to advocate for heritage language communities."},
+   message:"Thank you for completing this questionnaire! Your responses reflect a strong and consistent critical language awareness. You approach language with an informed, equitable lens — recognising the legitimacy of all varieties of Spanish, understanding how English hegemony shapes language ideologies, and valuing bilingual practices like code-switching. Attending a Critical Language Awareness (CLA) workshop can be an opportunity to connect your awareness to concrete strategies and explore how to advocate for heritage language communities."},
   {min:5.2,max:6.0, level:5,name:"Advanced Awareness",cls:"diag-5",label:"Level 5 — Advanced Awareness",
-   message:"Thank you for completing this questionnaire! Your responses demonstrate an advanced and highly developed critical language awareness. You consistently challenge dominant language ideologies, affirm the intrinsic value of U.S. Spanish and bilingual varieties, and show a strong commitment to heritage language maintenance and community advocacy. Your perspective is a valuable resource in any setting. This workshop may offer an opportunity to share your insights and connect with others who share your commitment to linguistic equity."},
+   message:"Thank you for completing this questionnaire! Your responses demonstrate an advanced and highly developed critical language awareness. You consistently challenge dominant language ideologies, affirm the intrinsic value of U.S. Spanish and bilingual varieties, and show a strong commitment to heritage language maintenance and community advocacy. Your perspective is a valuable resource in any setting. Attending a Critical Language Awareness (CLA) workshop may offer an opportunity to share your insights and connect with others who share your commitment to linguistic equity."},
 ];
- 
+
 /* ═══════════════════════════════════
    LANGUAGE TABLE
 ═══════════════════════════════════ */
 let langRowCount = 0;
 const profOpts = ['H','MH','ML','L'];
 const profLabels = {'H':'Highly proficient','MH':'Medium-high','ML':'Medium-low','L':'Low'};
- 
+
 function profSelect(name){
   return `<select name="${name}"><option value="">—</option>${profOpts.map(v=>`<option value="${v}">${v} — ${profLabels[v]}</option>`).join('')}</select>`;
 }
- 
+
 function addLangRow(preset=''){
   const tbody = document.getElementById('lang-tbody');
   const id = ++langRowCount;
@@ -555,9 +569,9 @@ function addLangRow(preset=''){
     <td><button class="remove-lang" onclick="removeLang(${id})" title="Remove">&times;</button></td>`;
   tbody.appendChild(tr);
 }
- 
+
 function removeLang(id){ document.getElementById(`lr-${id}`)?.remove(); }
- 
+
 function getLangs(){
   return [...document.querySelectorAll('#lang-tbody tr')].reduce((acc,row)=>{
     const name = row.querySelector('[name^="ln-"]')?.value?.trim();
@@ -572,21 +586,21 @@ function getLangs(){
     return acc;
   },[]);
 }
- 
+
 /* ═══════════════════════════════════
    SESSION & NAVIGATION
 ═══════════════════════════════════ */
 let sessionType = 'PRE';
- 
+
 function showScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
 }
- 
+
 function startProfile(){
   const isPre = confirm(
-    'Is this your FIRST time completing this questionnaire in this workshop?\n\n' +
+    'Is this your FIRST time completing this questionnaire?\n\n' +
     'OK  →  PRE-test  (start of workshop)\nCancel  →  POST-test  (end of workshop)'
   );
   sessionType = isPre ? 'PRE' : 'POST';
@@ -598,17 +612,17 @@ function startProfile(){
   if(langRowCount===0){ addLangRow('Spanish'); addLangRow('English'); }
   showScreen('screen-profile');
 }
- 
+
 /* ═══════════════════════════════════
    QUIZ
 ═══════════════════════════════════ */
 const answers = {};
- 
+
 function startQuiz(){
   buildQuiz();
   showScreen('screen-quiz');
 }
- 
+
 function buildQuiz(){
   let html='', lastF=null;
   QUESTIONS.forEach(q=>{
@@ -639,21 +653,22 @@ function buildQuiz(){
   document.getElementById('quiz-body').innerHTML=html;
   updateFooter();
 }
- 
+
 function recordAnswer(qid,val){
   answers[qid]=val;
   document.getElementById(`qc-${qid}`)?.classList.add('answered');
   updateFooter();
 }
- 
+
 function updateFooter(){
   const n=Object.keys(answers).length;
   document.getElementById('answered-count').innerHTML=`<strong>${n}</strong> of 19 answered`;
   document.getElementById('progress-fill').style.width=`${(n/19)*100}%`;
   document.getElementById('progress-label').textContent=`${n} / 19`;
-  document.getElementById('btn-submit').disabled=n<19;
+  const consent = document.getElementById('consent-check');
+document.getElementById('btn-submit').disabled = (n < 19) || !consent?.checked;
 }
- 
+
 /* ═══════════════════════════════════
    SCORING
 ═══════════════════════════════════ */
@@ -667,12 +682,12 @@ function computeScores(){
   const overall=avg(Object.values(adj));
   return {f1,f2,f3,overall,adj};
 }
- 
+
 function getLevel(score){
   for(const l of LEVELS) if(score>=l.min&&score<=l.max) return l;
   return score<1?LEVELS[0]:LEVELS[4];
 }
- 
+
 /* ═══════════════════════════════════
    COLLECT PROFILE
 ═══════════════════════════════════ */
@@ -694,7 +709,7 @@ function collectProfile(){
     languages:JSON.stringify(getLangs()),
   };
 }
- 
+
 /* ═══════════════════════════════════
    SUBMIT & SEND TO GOOGLE SHEETS
 ═══════════════════════════════════ */
@@ -705,11 +720,11 @@ function submitQuiz(){
   showScreen('screen-results');
   sendToSheet(scores,level,collectProfile());
 }
- 
+
 async function sendToSheet(scores,level,profile){
   const el=document.getElementById('save-status');
   if(!el) return;
-  if(SHEET_URL==='YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'){
+  if(SHEET_URL==='https://script.google.com/macros/s/AKfycby2Thr2D0hnv1N1wxZS8eUHgOAAxHTebcQkaVlnf3cwFz5BZxhooVbvhudz3m3ULQ5FZA/exec'){
     el.className='save-status error';
     el.innerHTML=`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="7"/><path d="M8 5v3M8 11v.5"/></svg>
       <span>Google Sheet not yet connected. See README for setup. Your score is still valid.</span>`;
@@ -727,7 +742,12 @@ async function sendToSheet(scores,level,profile){
     ...Object.fromEntries(QUESTIONS.map(q=>[`q${q.id}_adj`,scores.adj[q.id]])),
   };
   try{
-    await fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    await fetch(SHEET_URL, {
+  method: 'POST',
+  body: new URLSearchParams({
+    data: JSON.stringify(payload)
+  })
+});
     el.className='save-status saved';
     el.innerHTML=`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8l4 4 8-8"/></svg> <span>Responses saved to the workshop record successfully.</span>`;
   }catch(e){
@@ -736,7 +756,7 @@ async function sendToSheet(scores,level,profile){
       <span>Could not save automatically. Please note your score: <strong>${scores.overall.toFixed(2)}</strong> (${level.name}).</span>`;
   }
 }
- 
+
 /* ═══════════════════════════════════
    RESULTS PAGE
 ═══════════════════════════════════ */
@@ -791,10 +811,10 @@ function buildResults(scores,level){
     <div class="citation">
       <strong>Interactive tool:</strong> Acero Ayuda, A. (2026). <em>CLA Self-Assessment Tool</em> [Interactive questionnaire]. CC BY 4.0.<br><br>
       <strong>Measurement instrument:</strong> Beaudrie, S., Amezcua, A., &amp; Loza, S. (2019). Critical language awareness for the heritage context: Development and validation of a measurement questionnaire. <em>Language Testing</em>. <a href="https://doi.org/10.1177/0265532219844293" target="_blank">https://doi.org/10.1177/0265532219844293</a><br><br>
-      Any use or adaptation of this tool must credit both parties above. Response data is sent only to the workshop facilitator's private spreadsheet.
+      Any use or adaptation of this tool must credit both parties above. Response data is sent only to the researcher's private spreadsheet.
     </div>`;
 }
- 
+
 function restart(){
   Object.keys(answers).forEach(k=>delete answers[k]);
   buildQuiz();
@@ -803,4 +823,3 @@ function restart(){
 </script>
 </body>
 </html>
- 
