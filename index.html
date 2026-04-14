@@ -130,23 +130,45 @@ function submitQuiz(){
 }
 
 /* ================= GOOGLE SHEETS ================= */
-async function sendToSheet(scores,level){
-  const payload={
-    timestamp:new Date().toISOString(),
-    session:sessionType,
-    score_overall:scores.overall.toFixed(2),
-    cla_level:level.level,
-    cla_level_name:level.name,
-    ...Object.fromEntries(QUESTIONS.map(q=>[`q${q.id}`,answers[q.id]]))
+async function sendToSheet(scores, level, profile){
+  const el = document.getElementById('save-status');
+  if(!el) return;
+
+  el.className = 'save-status saving';
+  el.innerHTML = 'Saving to Google Sheets...';
+
+  const payload = {
+    timestamp: new Date().toISOString(),
+    session: sessionType,
+
+    ...profile,
+
+    score_f1: scores.f1.toFixed(3),
+    score_f2: scores.f2.toFixed(3),
+    score_f3: scores.f3.toFixed(3),
+    score_overall: scores.overall.toFixed(3),
+
+    cla_level: level.level,
+    cla_level_name: level.name,
+
+    ...Object.fromEntries(QUESTIONS.map(q => [`q${q.id}_raw`, answers[q.id]])),
+    ...Object.fromEntries(QUESTIONS.map(q => [`q${q.id}_adj`, scores.adj[q.id]]))
   };
 
-  try{
-    await fetch(SHEET_URL,{
-      method:'POST',
-      body:new URLSearchParams({data:JSON.stringify(payload)})
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      body: new URLSearchParams({
+        data: JSON.stringify(payload)
+      })
     });
-  }catch(e){
-    console.log("Sheet error",e);
+
+    el.className = 'save-status saved';
+    el.innerHTML = 'Responses saved successfully to Google Sheets.';
+  } catch (e) {
+    console.error(e);
+    el.className = 'save-status error';
+    el.innerHTML = 'Could not save to Google Sheets (check Apps Script deployment).';
   }
 }
 
