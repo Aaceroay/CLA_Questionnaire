@@ -205,7 +205,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 <!-- ══════════════ INTRO ══════════════ -->
 <section id="screen-intro" class="screen active">
   <div class="intro-inner">
-    <div class="intro-kicker">CLA Self-Assessment · Heritage Language Workshop</div>
+    <div class="intro-kicker">CLA Self-Assessment · Spanish Heritage Language</div>
     <h1 class="intro-title">How aware are you of<br><em>language in society?</em></h1>
     <p class="intro-desc">This questionnaire measures your Critical Language Awareness (CLA) — your understanding of how social, political, and cultural forces shape attitudes toward Spanish in the United States.</p>
     <div class="intro-meta">
@@ -217,7 +217,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
       Begin assessment
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
     </button>
-    <p class="intro-disclaimer">There are no right or wrong answers. Your responses reflect your current perspective. Your profile data is accessible only to the workshop facilitator.</p>
+    <p class="intro-disclaimer">There are no right or wrong answers. Your responses reflect your current perspective. Your profile data will be private.</p>
     <div class="intro-credit">
       <strong>Interactive tool:</strong> &copy; 2026 Alejandro Acero Ayuda &middot; <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a><br>
       <strong>Instrument:</strong> Beaudrie, S., Amezcua, A., &amp; Loza, S. (2019). <em>Language Testing</em>. <a href="https://doi.org/10.1177/0265532219844293" target="_blank">doi:10.1177/0265532219844293</a>
@@ -236,7 +236,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 
     <!-- SECTION 1: PERSONAL -->
     <h2 class="sec-heading">About you</h2>
-    <p class="sec-sub">This information helps the researcher understand who participated. All data is confidential and only accessible to the workshop facilitator.</p>
+    <p class="sec-sub">This information helps the researcher understand who participated. All data is confidential and only accessible to the researcher</p>
 
     <div class="form-grid">
       <div class="field"><label for="p-firstname">First name</label><input type="text" id="p-firstname" placeholder="e.g. Maria"></div>
@@ -410,7 +410,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 
     <div class="form-grid">
       <div class="field">
-        <span class="flabel">Attitude toward Spanish before today's workshop</span>
+        <span class="flabel">What is your attitude towards the Spanish language at this point in your life?</span>
         <div class="radio-col" style="margin-top:6px">
           <label class="ropt"><input type="radio" name="prior-attitude" value="Very positive"><span>Very positive</span></label>
           <label class="ropt"><input type="radio" name="prior-attitude" value="Somewhat positive"><span>Somewhat positive</span></label>
@@ -420,7 +420,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
         </div>
       </div>
       <div class="field">
-        <span class="flabel">Have you previously attended a workshop or course on language awareness or sociolinguistics?</span>
+        <span class="flabel">Have you previously attended a workshop or course on critical language awareness or sociolinguistics?</span>
         <div class="radio-col" style="margin-top:6px">
           <label class="ropt"><input type="radio" name="prior-workshop" value="Yes, formal course"><span>Yes, as part of a formal course</span></label>
           <label class="ropt"><input type="radio" name="prior-workshop" value="Yes, informal workshop"><span>Yes, in an informal workshop</span></label>
@@ -431,10 +431,6 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
     </div>
 
     <div class="form-grid">
-      <div class="field">
-        <label for="p-motivation">What motivated you to attend this workshop? <span style="font-weight:400;text-transform:none">(optional)</span></label>
-        <textarea id="p-motivation" placeholder="Briefly share what brought you here and what you hope to gain..."></textarea>
-      </div>
       <div class="field">
         <label for="p-comments">Any other information you would like to share? <span style="font-weight:400;text-transform:none">(optional)</span></label>
         <textarea id="p-comments" placeholder="Any relevant background, context, or comments..."></textarea>
@@ -475,7 +471,7 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 <!-- ══════════════ COPYRIGHT BAR ══════════════ -->
 <footer class="copyright-bar">
   <p>&copy; 2026 Alejandro Acero Ayuda &middot; <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a><span class="pipe">|</span>Instrument: Beaudrie, Amezcua &amp; Loza (2019). <em>Language Testing</em>. <a href="https://doi.org/10.1177/0265532219844293" target="_blank">doi:10.1177/0265532219844293</a></p>
-  <p>Participant data is sent only to the workshop facilitator's private spreadsheet.</p>
+  <p>Participant data is sent only to the researcher's private spreadsheet.</p>
 </footer>
 
 <script>
@@ -519,15 +515,15 @@ const FACTORS = {
 
 const LEVELS = [
   {min:1.0,max:2.49,level:1,name:"Nascent Awareness",cls:"diag-1",label:"Level 1 — Nascent Awareness",
-   message:"Thank you for completing this questionnaire! Your responses suggest that you are at the beginning of your journey in critically exploring language in society. Like many people, some of the ideas you currently hold reflect deeply ingrained beliefs about what counts as \"correct\" or \"proper\" language — beliefs that are widely shared but rarely questioned. This workshop is a great opportunity to begin exploring the social and political forces that shape those ideas. There are no wrong answers here, only starting points for reflection and growth."},
+   message:"Thank you for completing this questionnaire! Your responses suggest that you are at the beginning of your journey in critically exploring language in society. Like many people, some of the ideas you currently hold reflect deeply ingrained beliefs about what counts as \"correct\" or \"proper\" language — beliefs that are widely shared but rarely questioned. Attending a Critical Language Awareness (CLA) workshop is a great opportunity to begin exploring the social and political forces that shape those ideas. There are no wrong answers here, only starting points for reflection and growth."},
   {min:2.5,max:3.49,level:2,name:"Emerging Awareness",cls:"diag-2",label:"Level 2 — Emerging Awareness",
-   message:"Thank you for completing this questionnaire! Your responses show that you are already beginning to question some dominant ideas about language — you likely recognise the value of bilingualism and can see that language use is tied to social context. At the same time, there may be areas, such as attitudes toward code-switching or non-standard varieties, where dominant ideologies remain influential. This workshop will help you build on your growing awareness and develop a richer critical toolkit."},
+   message:"Thank you for completing this questionnaire! Your responses show that you are already beginning to question some dominant ideas about language — you likely recognise the value of bilingualism and can see that language use is tied to social context. At the same time, there may be areas, such as attitudes toward code-switching or non-standard varieties, where dominant ideologies remain influential. Attending a Critical Language Awareness (CLA) workshop will help you build on your growing awareness and develop a richer critical toolkit."},
   {min:3.5,max:4.49,level:3,name:"Developing Awareness",cls:"diag-3",label:"Level 3 — Developing Awareness",
-   message:"Thank you for completing this questionnaire! Your responses indicate a developing critical language awareness. You clearly understand that language variation is natural and that attitudes toward Spanish — including Spanglish and code-switching — are shaped by social and political forces rather than linguistic facts. You are well-positioned to deepen this awareness and apply it in your professional and community contexts. This workshop will help you refine and extend your critical perspective."},
+   message:"Thank you for completing this questionnaire! Your responses indicate a developing critical language awareness. You clearly understand that language variation is natural and that attitudes toward Spanish — including Spanglish and code-switching — are shaped by social and political forces rather than linguistic facts. You are well-positioned to deepen this awareness and apply it in your professional and community contexts. Attending a Critical Language Awareness (CLA) workshop will help you refine and extend your critical perspective."},
   {min:4.5,max:5.19,level:4,name:"Consolidated Awareness",cls:"diag-4",label:"Level 4 — Consolidated Awareness",
-   message:"Thank you for completing this questionnaire! Your responses reflect a strong and consistent critical language awareness. You approach language with an informed, equitable lens — recognising the legitimacy of all varieties of Spanish, understanding how English hegemony shapes language ideologies, and valuing bilingual practices like code-switching. This workshop can be an opportunity to connect your awareness to concrete strategies and explore how to advocate for heritage language communities."},
+   message:"Thank you for completing this questionnaire! Your responses reflect a strong and consistent critical language awareness. You approach language with an informed, equitable lens — recognising the legitimacy of all varieties of Spanish, understanding how English hegemony shapes language ideologies, and valuing bilingual practices like code-switching. Attending a Critical Language Awareness (CLA) workshop can be an opportunity to connect your awareness to concrete strategies and explore how to advocate for heritage language communities."},
   {min:5.2,max:6.0, level:5,name:"Advanced Awareness",cls:"diag-5",label:"Level 5 — Advanced Awareness",
-   message:"Thank you for completing this questionnaire! Your responses demonstrate an advanced and highly developed critical language awareness. You consistently challenge dominant language ideologies, affirm the intrinsic value of U.S. Spanish and bilingual varieties, and show a strong commitment to heritage language maintenance and community advocacy. Your perspective is a valuable resource in any setting. This workshop may offer an opportunity to share your insights and connect with others who share your commitment to linguistic equity."},
+   message:"Thank you for completing this questionnaire! Your responses demonstrate an advanced and highly developed critical language awareness. You consistently challenge dominant language ideologies, affirm the intrinsic value of U.S. Spanish and bilingual varieties, and show a strong commitment to heritage language maintenance and community advocacy. Your perspective is a valuable resource in any setting. Attending a Critical Language Awareness (CLA) workshop may offer an opportunity to share your insights and connect with others who share your commitment to linguistic equity."},
 ];
 
 /* ═══════════════════════════════════
@@ -586,7 +582,7 @@ function showScreen(id){
 
 function startProfile(){
   const isPre = confirm(
-    'Is this your FIRST time completing this questionnaire in this workshop?\n\n' +
+    'Is this your FIRST time completing this questionnaire?\n\n' +
     'OK  →  PRE-test  (start of workshop)\nCancel  →  POST-test  (end of workshop)'
   );
   sessionType = isPre ? 'PRE' : 'POST';
@@ -791,7 +787,7 @@ function buildResults(scores,level){
     <div class="citation">
       <strong>Interactive tool:</strong> Acero Ayuda, A. (2026). <em>CLA Self-Assessment Tool</em> [Interactive questionnaire]. CC BY 4.0.<br><br>
       <strong>Measurement instrument:</strong> Beaudrie, S., Amezcua, A., &amp; Loza, S. (2019). Critical language awareness for the heritage context: Development and validation of a measurement questionnaire. <em>Language Testing</em>. <a href="https://doi.org/10.1177/0265532219844293" target="_blank">https://doi.org/10.1177/0265532219844293</a><br><br>
-      Any use or adaptation of this tool must credit both parties above. Response data is sent only to the workshop facilitator's private spreadsheet.
+      Any use or adaptation of this tool must credit both parties above. Response data is sent only to the researcher's private spreadsheet.
     </div>`;
 }
 
