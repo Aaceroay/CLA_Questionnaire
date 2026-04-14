@@ -808,11 +808,7 @@ function buildResults(scores,level){
 
 function restart(){
   Object.keys(answers).forEach(k=>delete answers[k]);
-  buildQuiz()document.addEventListener('change', function(e){
-  if(e.target && e.target.id === 'consent-check'){
-    updateFooter();
-  }
-});
+  buildQuiz();
   showScreen('screen-quiz');
 }
 </script>
